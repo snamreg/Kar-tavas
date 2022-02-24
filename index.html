@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+ <H1>Karātavas, have you got what it takes?</H1>
+ <br>
+    <input type="text" id="fname" name="fname"> 
+    <button class="pirm" onclick="nosutit()">Ievadit</button> 
+    
+    <br>
+ <h2>Atbilde</h2> 
+ <p id="rezultats">tieši tā</p> 
+
+
+ <a href="javascript:location.reload(true)"><button> Mēģini vēlreiz</button></a> 
+
+ <button id = "h" onclick = "funkcija('h')"> h </button>
+ <button id = "b" onclick = "funkcija('b')"> b </button>
+
+ <script>
+    let vajadzigais_vards = "atbilde";
+    let vards_procesa = "";
+
+    
+    function funkcija(burts){
+       document.getElementById(burts).disabled=true;
+       console.log(burts);
+    }
+
+    function jaunsVards(){
+       console.log("jauns vārds!!")
+       uzzimetSvitrinas();
+    }
+
+    function uzzimetSvitrinas(){
+       console.log("ir svitras!")
+    }
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
