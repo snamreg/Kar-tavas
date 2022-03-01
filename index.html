@@ -84,8 +84,9 @@
  <script>
 
 
-    let vajadzigais_vards = "pērtiķis";
-    let vards_procesa = "";
+    let vajadzigais_vards = "pērtiķis"; //šis mainīgais glabā vajadzīgo vārdu
+    let vards_procesa = ""; 
+
     function uzzimeProcesaVardu(){
        document.getElementById("rezultats").innerHTML=vards_procesa;
     }
@@ -93,9 +94,12 @@
     function funkcija(burts){
        document.getElementById(burts).disabled=true;
        for (simbolaNr in vajadzigais_vards){
-          console.log(vajadzigais_vards[simbolaNr], burts);
+          
           if (vajadzigais_vards[simbolaNr] == burts){
-             console.log ("ir burtd")
+             vards_procesa = vards_procesa.split(""); // šeit vārdu sadala masīvā (string to array)
+             vards_procesa[simbolaNr] = burts;
+             vards_procesa = vards_procesa.join("");
+             uzzimeProcesaVardu();
           }
        }
        console.log(burts);
@@ -109,7 +113,7 @@
     function uzzimetSvitrinas(){
        console.log("irsvitras!")
        for(simbols in vajadzigais_vards){
-          vards_procesa +="_ "
+          vards_procesa +="_"
        }
        uzzimeProcesaVardu();
 
