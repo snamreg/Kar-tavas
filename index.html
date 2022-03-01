@@ -92,9 +92,9 @@
     
     function funkcija(burts){
        document.getElementById(burts).disabled=true;
-       for (simbols in vajadzigais_vards){
-          console.log(vajadzigais_vards[simbols], burts);
-          if (vajadzigais_vards[simbols] == burts){
+       for (simbolaNr in vajadzigais_vards){
+          console.log(vajadzigais_vards[simbolaNr], burts);
+          if (vajadzigais_vards[simbolaNr] == burts){
              console.log ("ir burtd")
           }
        }
@@ -120,7 +120,10 @@
 
 
 
-
+<script>
+   let text = "We are the so-called \"Vikings\" from the north.";
+   document.getElementById("demo").innerHTML = text; 
+   </script>
 
 
 
