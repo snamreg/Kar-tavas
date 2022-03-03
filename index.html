@@ -87,21 +87,29 @@
 
     let vajadzigais_vards = "pērtiķis"; //šis mainīgais glabā vajadzīgo vārdu
     let vards_procesa = ""; 
+    let dzivibas = 5;
 
     function uzzimeProcesaVardu(){
        document.getElementById("rezultats").innerHTML=vards_procesa;
     }
     
     function funkcija(burts){
+       let burtsBija = 0;  //0 - nebija 1 -bija
        document.getElementById(burts).disabled=true;
        for (simbolaNr in vajadzigais_vards){
           
           if (vajadzigais_vards[simbolaNr] == burts){
+             burtsBija = 1;
              vards_procesa = vards_procesa.split(""); // šeit vārdu sadala masīvā (string to array)
              vards_procesa[simbolaNr] = burts;
              vards_procesa = vards_procesa.join("");
              uzzimeProcesaVardu();
           }
+       }
+
+       if (burtsBija == 0){
+          dzivibas = dzivibas - 1; //noņemas dzīvība
+          izdzestDzivibu(dzivibas);
        }
        console.log(burts);
     }
@@ -111,7 +119,7 @@
        uzzimetSvitrinas();
     }
 
-    function uzzimetSvitrinas (){
+    function uzzimetSvitrinas(){
        console.log("irsvitras!")
        for(simbols in vajadzigais_vards){
           vards_procesa +="_"
@@ -120,15 +128,17 @@
 
     }
 
+   function izdzestDzivibu(dzivibuSkaits){
+   document.getElementById("dziviba"+dzivibuSkaits).style.display = "none";
+}
+
  </script>
 
-
-
-
-<script>
-   let text = "We are the so-called \"Vikings\" from the north.";
-   document.getElementById("demo").innerHTML = text; 
-   </script>
+<img src="lubestiba.jpg" alt="dziviba" width="100" height="50" id="dziviba0">
+<img src="lubestiba.jpg" alt="dziviba" width="100" height="50" id="dziviba1">
+<img src="lubestiba.jpg" alt="dziviba" width="100" height="50" id="dziviba2">
+<img src="lubestiba.jpg" alt="dziviba" width="100" height="50" id="dziviba3"> 
+<img src="lubestiba.jpg" alt="dziviba" width="100" height="50" id="dziviba4">
 
 
 
