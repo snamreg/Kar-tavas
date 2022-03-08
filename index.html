@@ -82,7 +82,12 @@
    <a href="javascript:location.reload(true)"><button class="otra"> Mēģini vēlreiz</button></a> 
 </div>
 
+<div id="viens">
+
+</div>
+
  <script>
+   
 
 
     let vajadzigais_vards = "pērtiķis"; //šis mainīgais glabā vajadzīgo vārdu
@@ -104,13 +109,17 @@
              vards_procesa[simbolaNr] = burts;
              vards_procesa = vards_procesa.join("");
              uzzimeProcesaVardu();
+             
           }
        }
-
+       tuUzvareji();
        if (burtsBija == 0){
           dzivibas = dzivibas - 1; //noņemas dzīvība
           izdzestDzivibu(dzivibas);
+
+          
        }
+       tuZaudeji();
        console.log(burts);
     }
 
@@ -131,6 +140,22 @@
    function izdzestDzivibu(dzivibuSkaits){
    document.getElementById("dziviba"+dzivibuSkaits).style.display = "none";
 }
+   function tuZaudeji () {
+      if (dzivibas == 0) {
+         document.getElementById("viens").innerHTML = "Game over - Neesi loks" ;
+         document.getElementById("viens").style.fontSize='60px' ;
+         document.getElementById("viens").style.textAlign="Center"
+         document.getElementById("viens").style.backgroundColor="red";
+      }
+   }
+   function tuUzvareji () {
+      if (vards_procesa.indexOf("_") == -1) {
+         document.getElementById("viens").innerHTML = "You win" ;
+         document.getElementById("viens").style.fontSize='60px'
+         document.getElementById("viens").style.textAlign="Center" ;
+         document.getElementById("viens").style.backgroundColor="yellow";
+      }
+   }
 
  </script>
 
